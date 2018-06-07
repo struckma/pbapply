@@ -10,7 +10,8 @@
         label = "",
         nout = 100L,
         min_time = 0,
-        use_lb = FALSE)
+        use_lb = FALSE,
+        file = "")
     optsx <- getOption("pboptions")
     if (!is.null(optsx)) {
         for (i in intersect(names(opts), names(optsx)))
