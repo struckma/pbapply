@@ -12,7 +12,7 @@
         min_time = 0,
         use_lb = FALSE,
         file = "",
-        fct = function(txt) cat(txt),
+        fct = simpleCat,
         label_name = "")
     optsx <- getOption("pboptions")
     if (!is.null(optsx)) {
@@ -29,4 +29,6 @@
     options("pboptions" = NULL)
     invisible(NULL)
 }
+
+simpleCat <- function(txt) { cat(txt) }
 

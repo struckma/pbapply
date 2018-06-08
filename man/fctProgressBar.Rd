@@ -2,6 +2,7 @@
 \alias{fctProgressBar}
 \alias{setFctProgressBar}
 \alias{getFctProgressBar}
+\alias{simpleCat}
 \title{
 Function Progress Bar
 }
@@ -12,7 +13,8 @@ Text progress bar calling a function on progress.
 fctProgressBar(min = 0, max = 1, initial = 0, char = "=",
     width = NA, title, label, style = 1, fct = function(txt) cat(txt), label_name = "")
 getFctProgressBar(pb)
-setFctProgressBar(pb, value, title = NULL, label = NULL)
+setFctProgressBar(pb, value, title = "", label = NULL)
+simpleCat(txt)
 }
 \arguments{
   \item{min, max}{
@@ -36,9 +38,6 @@ which fits into \code{getOption("width")}.
   \item{style}{
 the style taking values between 1 and 5. 3 and 4 are meant for use with loggers. The others work for console output. 3 displays a label for the timer.
 }
-  \item{file}{
-an open connection object or \code{""} which indicates the console.
-}
   \item{pb}{
 an object of class \code{"fctProgressBar"}.
 }
@@ -54,6 +53,9 @@ a function with argument txt. This function is called whenever a progress happen
   \item{label_name}{
 If this is not set to "", the title of the progressbar (style 3) will not be the function call starting the progressing action (\code{"pb*apply"}) but the contents of a variable named as set in \code{"label_name"} in the environment that was calling \code{"pb*apply"}, if existing and not empty.
 }
+  \item{txt}{
+the text to log.
+}
 }
 \details{
 \code{fctProgressBar} will input a progress bar to a function given in the option \code{"fct"}. This could be a logger function.
@@ -65,6 +67,8 @@ The progress bar should be closed when finished with: for styles 1, 2, and 5 thi
 For styles 3 and 4 a "done." message will be logged (in case of 3 alos with the label).
 
 For the meaning of the \code{"char"} see \code{"timerProgressBar"}.
+
+\code{simpleCat} is a very simple example for a logger function
 }
 
 \value{
@@ -86,8 +90,12 @@ follows closely the code of \code{\link[utils]{txtProgressBar}}.
 \examples{
 \dontrun{
 flog.appender(appender.file("/tmp/test.run.log"))
-pboptions(type = "fct", fct = function(txt) futile.logger::flog.error(txt), label_name = "progress_label")
-das_ist_ein_test <- function(a, b, c, d, e, f =12) { progress_label <- "PROGRESS TEST"; pblapply(1:10, function(x) Sys.sleep(1)) }
+pboptions(type = "fct", fct = function(txt) futile.logger::flog.error(txt),
+  label_name = "progress_label")
+das_ist_ein_test <- function(a, b, c, d, e, f = 12) {
+  progress_label <- "PROGRESS TEST"
+  pblapply(1:10, function(x) Sys.sleep(1))
+}
 das_ist_ein_test(1,2 ,3, 1:12, f=17)
 pblapply(1:10, function(x) Sys.sleep(1))
 }
