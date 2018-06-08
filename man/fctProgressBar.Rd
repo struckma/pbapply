@@ -89,15 +89,18 @@ follows closely the code of \code{\link[utils]{txtProgressBar}}.
 }
 \examples{
 \dontrun{
-flog.appender(appender.file("/tmp/test.run.log"))
-pboptions(type = "fct", fct = function(txt) futile.logger::flog.error(txt),
+# This is meant to run to a file:
+# flog.appender(appender.file("/tmp/test.run.log"))
+# logging would be called by futile.logger::flog.error(txt)
+# However, for testing, we use console and owr own test function
+# simpleCat()
+pboptions(type = "fct", fct = simpleCat,
   label_name = "progress_label")
 das_ist_ein_test <- function(a, b, c, d, e, f = 12) {
   progress_label <- "PROGRESS TEST"
   pblapply(1:10, function(x) Sys.sleep(1))
 }
 das_ist_ein_test(1,2 ,3, 1:12, f=17)
-pblapply(1:10, function(x) Sys.sleep(1))
 }
 }
 \keyword{ utilities }

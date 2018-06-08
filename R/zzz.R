@@ -30,5 +30,5 @@
     invisible(NULL)
 }
 
-simpleCat <- function(txt) { cat(txt) }
+simpleCat <- function(txt) { cat(txt, "\n") }
 
