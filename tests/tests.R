@@ -21,6 +21,9 @@ example(timerProgressBar, run.dontrun = TRUE)
 example(pbapply, run.dontrun = TRUE)
 example(pboptions, run.dontrun = TRUE)
 
+## run fctProgressBar examples
+example(fctProgressBar, run.dontrun = TRUE)
+
 ## --- test for NULL case in lapply ---
 
 l <- list(a = 1, 2, c = -1)

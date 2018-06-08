@@ -98,7 +98,8 @@ pboptions(type = "fct", fct = simpleCat,
   label_name = "progress_label")
 das_ist_ein_test <- function(a, b, c, d, e, f = 12) {
   progress_label <- "PROGRESS TEST"
-  pblapply(1:10, function(x) Sys.sleep(1))
+  ok <- all(pblapply(1:10, function(x) { Sys.sleep(0.2); return(x) }) == 1:10)
+  stopifnot(ok)
 }
 das_ist_ein_test(1,2 ,3, 1:12, f=17)
 }
