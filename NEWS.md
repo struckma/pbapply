@@ -1,5 +1,12 @@
 # User-visible changes in the pbapply R package
 
+## Version 1.3-5.9000, June 7, 2018
+
+* `fctProgressBar` is a new progress bar type (type name fct) which
+  uses a function call for ouput of progress meant to use with loggers
+  such as futile.logger
+* Added file option for the text based loggers
+
 ## Version 1.3-5, March 22, 2018
 
 * `pblapply` returns empty list for empty vector consistent with 

@@ -4,6 +4,7 @@ function(pb, value)
     if (dopb()) {
         control <- getOption("pboptions")
         rval <- switch(control$type,
+            fct = setFctProgressBar(pb, value),
             timer = setTxtProgressBar(pb, value),
             txt = setTxtProgressBar(pb, value),
             win = setWinProgressBar(pb, value, label = control$label),

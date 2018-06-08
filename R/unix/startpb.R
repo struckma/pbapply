@@ -4,6 +4,12 @@ function(min=0, max=1)
     if (dopb()) {
         control <- getOption("pboptions")
         pb <- switch(control$type,
+            fct = fctProgressBar(min = min, max = max,
+                initial = control$initial,
+                style = control$style, width = control$txt.width,
+                char = control$char,
+                fct = control$fct,
+                label_name = control$label_name),
             timer = timerProgressBar(min = min, max = max,
                 initial = control$initial,
                 style = control$style, width = control$txt.width,
