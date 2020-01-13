@@ -2,7 +2,7 @@
 
 ## --- standard examples ---
 
-library(pbapply)
+library(pbapply.fctn)
 
 example(apply)
 example(lapply)
@@ -11,14 +11,14 @@ example(lapply)
 pboptions(type = "none")
 example(splitpb, run.dontrun = TRUE)
 example(timerProgressBar, run.dontrun = TRUE)
-example(pbapply, run.dontrun = TRUE)
+example(pbapply.fctn, run.dontrun = TRUE)
 example(pboptions, run.dontrun = TRUE)
 
 ## run examples with progress bar
 pboptions(type = "timer")
 example(splitpb, run.dontrun = TRUE)
 example(timerProgressBar, run.dontrun = TRUE)
-example(pbapply, run.dontrun = TRUE)
+example(pbapply.fctn, run.dontrun = TRUE)
 example(pboptions, run.dontrun = TRUE)
 
 ## run fctProgressBar examples

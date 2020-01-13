@@ -1,8 +1,8 @@
 Package: pbapply.fctn
 Type: Package
 Title: Adding Progress Bar to '*apply' Functions
-Version: 1.4-3.9001
-Date: 2020-01-10
+Version: 1.4-3.9002
+Date: 2020-01-13
 Author: Peter Solymos [aut, cre], Zygmunt Zawadzki [aut], Stephan Struckmann [aut]
 Maintainer: Stephan Struckmann <stephan.struckmann@uni-greifswald.de>
 Description: A lightweight package that adds

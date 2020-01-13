@@ -1,3 +1,7 @@
+# Version 1.4-3.9002, January 13, 2020
+
+* Minor fixes following fork rename.
+
 # Version 1.4-3.9001, January 10, 2020
 
 * Pulled changes from original package into fork
